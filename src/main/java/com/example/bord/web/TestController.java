@@ -18,7 +18,7 @@ public class TestController {
 
         return "start";
     }
-    @GetMapping("/login")
+    @GetMapping("/login3")
 
     public String login(Model model) {
 

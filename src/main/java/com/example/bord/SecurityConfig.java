@@ -52,7 +52,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin/**").hasAnyRole("ADMIN")
                 .anyRequest().permitAll()
                 .and().formLogin()
-                .loginPage("/login")
+                //.loginPage("/login")
                 .and().logout().logoutSuccessUrl("/")
                 .permitAll();
         //.and().exceptionHandling().accessDeniedPage("/add-user");
