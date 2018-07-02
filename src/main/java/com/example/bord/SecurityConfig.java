@@ -47,16 +47,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-        http.authorizeRequests()
-                .antMatchers("/admin/**").hasAnyRole("ADMIN")
-                .anyRequest().permitAll()
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/","/registration").permitAll()
+                .antMatchers("/addpost").hasAuthority("ROLE_ADMIN")
+                .anyRequest().authenticated()
                 .and().formLogin()
                 //.loginPage("/login")
                 .and().logout().logoutSuccessUrl("/")
                 .permitAll();
         //.and().exceptionHandling().accessDeniedPage("/add-user");
     }
+
+
+
     @Bean
     public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
         DefaultHttpFirewall firewall = new DefaultHttpFirewall();
@@ -67,5 +71,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.httpFirewall(allowUrlEncodedSlashHttpFirewall());
+        web.ignoring().antMatchers("/resources/**", "/static/**", "/vendor/**", "/css/**");
     }
 }

@@ -3,6 +3,7 @@
 <%@ taglib prefix="form"
            uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <head>
 
     <meta charset="utf-8">
@@ -10,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Post - Start Bootstrap Template</title>
+    <title>NoticeBoard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -42,6 +43,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/registration">Registration</a>
                 </li>
+                <sec:authorize access="hasAnyRole('USER') or hasRole('ADMIN')">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </sec:authorize>
+
             </ul>
         </div>
     </div>
@@ -154,6 +161,7 @@
                 <h5 class="card-header">Search</h5>
                 <div class="card-body">
                     <div class="input-group">
+                        <form:form action=""
                         <input type="text" class="form-control" placeholder="Search for...">
                         <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button">Go!</button>
