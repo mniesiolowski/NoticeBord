@@ -21,9 +21,21 @@
 
     </head>
 <body>
+<jsp:include page="../header.jsp"/>
+<div class="container">
 
-<center>
-    <h1></h1>
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Title -->
+            <h1 class="mt-4">Login</h1>
+
+        </div>
+
+        <div class="panel-body">
+
     <form:form method="post" modelAttribute="user">
         <label for="firstName">Imie</label><br>
         <form:input path="firstName"/><form:errors path="firstName"/><br><br>
@@ -38,6 +50,8 @@
     <form>
         <input type="button" value="Cancle" onclick="window.location.href='/'" />
     </form>
-</center>
+        </div>
+    </div>
+</div>
 </body>
 </html>

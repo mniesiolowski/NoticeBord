@@ -53,7 +53,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/addpost").hasAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
                 .and().formLogin()
-                //.loginPage("/login")
+                .loginPage("/login")
+                .permitAll()
                 .and().logout().logoutSuccessUrl("/")
                 .permitAll();
         //.and().exceptionHandling().accessDeniedPage("/add-user");

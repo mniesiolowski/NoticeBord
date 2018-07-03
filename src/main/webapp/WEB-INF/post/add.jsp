@@ -21,21 +21,35 @@
 
     </head>
 <body>
+<jsp:include page="../header.jsp"/>
+<div class="container">
 
-<center>
-    <h1></h1>
-    <form:form method="post" modelAttribute="post">
-        <label for="title">Tytuł</label><br>
-        <form:input path="title"/><form:errors path="title"/><br><br>
-        <label for="descreption">Opis</label><br>
-        <form:textarea path="descreption"/><form:errors path="descreption"/><br><br>
-        <b>Kategoria</b><br><form:errors path="category"/><br>
-        <form:checkboxes path="category" itemValue="id" itemLabel="name" items="${categories}"/><br><br>
-        <input type="submit" value="Save">
-    </form:form>
-    <form>
-        <input type="button" value="Cancle" onclick="window.location.href='/'" />
-    </form>
-</center>
+    <div class="row">
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+
+            <!-- Title -->
+            <h1 class="mt-4">Login</h1>
+
+        </div>
+
+        <div class="panel-body">
+            <form:form method="post" modelAttribute="post">
+                <label for="title" class="col-sm-3 control-label">Tytuł</label><br>
+                <form:input path="title" class="form-control"/>
+                <form:errors path="title" /><br><br>
+                <label for="descreption"class="col-sm-3 control-label">Opis</label><br>
+                <form:textarea path="descreption" class="form-control"/>
+                <form:errors path="descreption"/><br><br>
+                <b >Kategoria</b><br><form:errors path="category"/><br>
+                <form:checkboxes path="category" itemValue="id" itemLabel="name" items="${categories}"/><br><br>
+                <input type="submit" value="Save"  class="btn btn-primary">
+                <input type="button" value="Cancle" onclick="window.location.href='/'"  class="btn btn-primary"/>
+            </form:form>
+        </div>
+    </div>
+</div>
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>
