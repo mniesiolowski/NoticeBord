@@ -57,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and().logout().logoutSuccessUrl("/")
                 .permitAll();
-        //.and().exceptionHandling().accessDeniedPage("/add-user");
+        http.authorizeRequests().antMatchers("/resources/**").permitAll().anyRequest().permitAll();
     }
 
 
@@ -68,10 +68,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         firewall.setAllowUrlEncodedSlash(true);
         return firewall;
     }
-
+//@Bean
+//public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
+//    StrictHttpFirewall firewall = new StrictHttpFirewall();
+//    firewall.setAllowUrlEncodedSlash(true);
+//    return firewall;
+//}
     @Override
-    public void configure(WebSecurity web) throws Exception {
-        web.httpFirewall(allowUrlEncodedSlashHttpFirewall());
+public void configure(WebSecurity web) throws Exception {
+    web.httpFirewall(allowUrlEncodedSlashHttpFirewall());
+        super.configure(web);
+  //      web.httpFirewall(allowUrlEncodedSlashHttpFirewall());
         web.ignoring().antMatchers("/resources/**", "/static/**", "/vendor/**", "/css/**");
-    }
+
+}
 }

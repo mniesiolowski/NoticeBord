@@ -22,14 +22,16 @@
 
 <body>
 
-<jsp:include page="header.jsp"/>
+<jsp:include page="../header.jsp"/>
 <!-- Page Content -->
 <div class="container">
 
     <div class="row">
 
         <div class="col-lg-3">
-
+            <h4><p style="color: orange">Witaj: </p>${user.firstName} ${user.lastName}<br></h4>
+            <h4><p style="color: orange">Twoj login: </p>${user.username}<br></h4>
+            <h4><p style="color: orange">Twoj ID: </p>${user.id}</h4>
             <h1 class="my-4">Shop Name</h1>
             <div class="list-group">
                 <a href="#" class="list-group-item">Category 1</a>
@@ -69,43 +71,39 @@
                 </a>
             </div>
             <div class="row">
-<c:forEach items="${post}" var="post">
+                <%--<c:forEach items="${user.post}" var="post">--%>
 
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-50">
-                        <a href="/show-item${post.id}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">${post.title}</a>
-                            </h4>
-                            <h5>${post.user.username}</h5>
-                            <p class="card-text"> ${post.descreption}</p>
-                        </div>
+                    <%--<div class="col-lg-4 col-md-6 mb-4">--%>
+                        <%--<div class="card h-50">--%>
+                            <%--<a href="/show-item${post.id}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>--%>
+                            <%--<div class="card-body">--%>
+                                <%--<h4 class="card-title">--%>
+                                    <%--<a href="#">${post.title}</a>--%>
+                                <%--</h4>--%>
+                                <%--<h5>${post.user.username}</h5>--%>
+                                <%--<p class="card-text"> ${post.descreption}</p>--%>
+                            <%--</div>--%>
 
-                    </div>
-                </div>
-</c:forEach>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</c:forEach>--%>
             </div>
-
-            </div>
-            <!-- /.row -->
 
         </div>
-        <!-- /.col-lg-9 -->
+        <!-- /.row -->
+
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-9 -->
+</div>
+<!-- /.row -->
 
 
 </div>
-<!-- /.container -->
-
-<!-- Footer -->
-
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<jsp:include page="footer.jsp"/>
+<jsp:include page="../footer.jsp"/>
 </body>
 
 </html>

@@ -48,6 +48,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/addpost">Put a new notice</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/info-user">Panel</a>
+                    </li>
                 </sec:authorize>
             </ul>
         </div>
