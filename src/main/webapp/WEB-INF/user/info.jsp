@@ -29,14 +29,11 @@
     <div class="row">
 
         <div class="col-lg-3">
-            <h4><p style="color: orange">Witaj: </p>${user.firstName} ${user.lastName}<br></h4>
-            <h4><p style="color: orange">Twoj login: </p>${user.username}<br></h4>
-            <h4><p style="color: orange">Twoj ID: </p>${user.id}</h4>
             <h1 class="my-4">Shop Name</h1>
             <div class="list-group">
-                <a href="#" class="list-group-item">Category 1</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+               <center> <p class="list-group-item">${user.firstName} ${user.lastName}1</p></center>
+                <p class="list-group-item">${user.username}</p>
+                <p class="list-group-item">${user.id}</p>
             </div>
 
         </div>

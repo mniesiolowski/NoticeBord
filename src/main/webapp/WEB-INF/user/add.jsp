@@ -30,28 +30,29 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4">Login</h1>
+            <h1 class="mt-4">Registration</h1>
 
         </div>
 
         <div class="panel-body">
 
-    <form:form method="post" modelAttribute="user">
-        <label for="firstName">Imie</label><br>
-        <form:input path="firstName"/><form:errors path="firstName"/><br><br>
-        <label for="lastName">Nazwisko</label><br>
-        <form:input path="lastName"/><form:errors path="lastName"/><br><br>
-        <label for="password">Password</label><br>
-        <form:input path="password"/><form:errors path="password"/><br><br>
-        <label for="username">Username</label><br>
-        <form:input path="username"/><form:errors path="username"/><br><br>
-        <input type="submit" value="Save">
-    </form:form>
-    <form>
-        <input type="button" value="Cancle" onclick="window.location.href='/'" />
-    </form>
+            <form:form method="post" modelAttribute="user">
+                <label for="firstName">Imie</label><br>
+                <form:input path="firstName"/><form:errors path="firstName"/><br><br>
+                <label for="lastName">Nazwisko</label><br>
+                <form:input path="lastName"/><form:errors path="lastName"/><br><br>
+                <label for="password">Password</label><br>
+                <form:input path="password"/><form:errors path="password"/><br><br>
+                <label for="username">Username</label><br>
+                <form:input path="username"/><form:errors path="username"/><br><br>
+                <input type="submit" value="Save">
+            </form:form>
+            <form>
+                <input type="button" value="Cancle" onclick="window.location.href='/'"/>
+            </form>
         </div>
     </div>
 </div>
+<jsp:include page="../footer.jsp"/>
 </body>
 </html>

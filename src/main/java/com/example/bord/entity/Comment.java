@@ -1,9 +1,7 @@
 package com.example.bord.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Comment {
@@ -11,7 +9,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String descreption;
-
+    @ManyToOne
+    private Post post;
     public long getId() {
         return id;
     }
