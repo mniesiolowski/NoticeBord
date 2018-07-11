@@ -34,6 +34,7 @@
                <center> <p class="list-group-item">${user.firstName} ${user.lastName}1</p></center>
                 <p class="list-group-item">${user.username}</p>
                 <p class="list-group-item">${user.id}</p>
+                <a class="list-group-item" href="/edit-user">Edit</a>
             </div>
 
         </div>

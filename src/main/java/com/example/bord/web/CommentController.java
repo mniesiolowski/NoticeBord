@@ -1,6 +1,6 @@
 package com.example.bord.web;
 
-import com.example.bord.entity.Post;
+import com.example.bord.entity.Comment;
 import com.example.bord.repository.PostRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +12,12 @@ public class CommentController {
 
     public CommentController(PostRepository postRepository) {
         this.postRepository = postRepository;
+    }
+
+    @PostMapping("/add-comment{id}")
+    public String addComment(Model model, @PathVariable Long id) {
+        model.addAttribute("comment", new Comment());
+        return "user/add";
     }
 
 }
