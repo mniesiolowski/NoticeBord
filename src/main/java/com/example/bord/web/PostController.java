@@ -80,4 +80,11 @@ public class PostController {
         model.addAttribute("post", posts);
         return "user/info";
     }
+    @GetMapping("/post-{id}")
+    public String showPost(Model model,@PathVariable Long id) {
+        Category category = categoryRepository.findOne(id);
+        List<Post> posts = postRepository.findByCategory(category);
+        model.addAttribute("post", posts);
+        return "post/search";
+    }
 }

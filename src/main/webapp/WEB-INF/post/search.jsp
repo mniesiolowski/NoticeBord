@@ -32,11 +32,9 @@
 
             <h1 class="my-4">Shop Name</h1>
             <div class="list-group">
-<c:forEach items="${category}" var="category">
-                <a href="/post-${category.id}" class="list-group-item">${category.name}</a>
+                <a href="#" class="list-group-item">Category 1</a>
                 <a href="#" class="list-group-item">Category 2</a>
                 <a href="#" class="list-group-item">Category 3</a>
-</c:forEach>
             </div>
 
         </div>
@@ -71,32 +69,32 @@
                 </a>
             </div>
             <div class="row">
-<c:forEach items="${post}" var="post">
+                <c:forEach items="${post}" var="post">
 
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card h-50">
-                        <a href="/show-item${post.id}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a href="#">${post.title}</a>
-                            </h4>
-                            <h5>${post.user.username}</h5>
-                            <p class="card-text"> ${post.descreption}</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-50">
+                            <a href="/show-item${post.id}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">${post.title}</a>
+                                </h4>
+                                <h5>${post.user.username}</h5>
+                                <p class="card-text"> ${post.descreption}</p>
+                            </div>
+
                         </div>
-
                     </div>
-                </div>
-</c:forEach>
+                </c:forEach>
             </div>
-
-            </div>
-            <!-- /.row -->
 
         </div>
-        <!-- /.col-lg-9 -->
+        <!-- /.row -->
+
     </div>
-    <!-- /.row -->
+    <!-- /.col-lg-9 -->
+</div>
+<!-- /.row -->
 
 
 </div>

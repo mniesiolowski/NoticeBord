@@ -14,10 +14,11 @@ public class CommentController {
         this.postRepository = postRepository;
     }
 
-    @PostMapping("/add-comment{id}")
-    public String addComment(Model model, @PathVariable Long id) {
-        model.addAttribute("comment", new Comment());
-        return "user/add";
-    }
-
+//    @PostMapping("/add-comment{id}")
+//    public String addComment(Model model, @PathVariable Long id) {
+//        model.addAttribute("comment", new Comment());
+//        return "user/add";
+//    }
+//
+//
 }
