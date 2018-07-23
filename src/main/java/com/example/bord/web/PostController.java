@@ -82,7 +82,7 @@ public class PostController {
     }
     @GetMapping("/post-{id}")
     public String showPost(Model model,@PathVariable Long id) {
-        Category category = categoryRepository.findOne(id);
+        Category category = categoryRepository.findById(id);
         List<Post> posts = postRepository.findByCategory(category);
         model.addAttribute("post", posts);
         return "post/search";
