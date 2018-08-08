@@ -30,12 +30,11 @@
 
         <div class="col-lg-3">
 
-            <h1 class="my-4">Shop Name</h1>
+            <h1 class="my-4">Category</h1>
             <div class="list-group">
 <c:forEach items="${category}" var="category">
                 <a href="/post-${category.id}" class="list-group-item">${category.name}</a>
-                <a href="#" class="list-group-item">Category 2</a>
-                <a href="#" class="list-group-item">Category 3</a>
+
 </c:forEach>
             </div>
 

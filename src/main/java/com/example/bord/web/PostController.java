@@ -39,6 +39,10 @@ public class PostController {
     List<Category> getAllCategory() {
         return categoryRepository.findAll();
     }
+    @ModelAttribute("category")
+    List<Category> listAllCategory() {
+        return categoryRepository.findAll();
+    }
 
     @GetMapping("/addpost")
     public String addUser(Model model) {
