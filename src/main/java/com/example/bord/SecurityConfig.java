@@ -31,20 +31,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new SpringDataUserDetailsService();
     }
 
-//    @Override
-//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.jdbcAuthentication().dataSource(dataSource)
-//                .passwordEncoder(passwordEncoder());
-//    }
-
-//    @Override
-//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user").password("user").roles("USER")
-//                .and()
-//                .withUser("admin1").password("admin123").roles("ADMIN");
-//    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
@@ -60,20 +46,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/resources/**").permitAll().anyRequest().permitAll();
     }
 
-
-
     @Bean
     public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
         DefaultHttpFirewall firewall = new DefaultHttpFirewall();
         firewall.setAllowUrlEncodedSlash(true);
         return firewall;
     }
-//@Bean
-//public HttpFirewall allowUrlEncodedSlashHttpFirewall() {
-//    StrictHttpFirewall firewall = new StrictHttpFirewall();
-//    firewall.setAllowUrlEncodedSlash(true);
-//    return firewall;
-//}
+
     @Override
 public void configure(WebSecurity web) throws Exception {
     web.httpFirewall(allowUrlEncodedSlashHttpFirewall());

@@ -43,13 +43,13 @@
                 </li>
                 <sec:authorize access="hasAnyRole('USER') or hasRole('ADMIN')">
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout">Logout</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/addpost">Put a new notice</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/info-user">Panel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
                     </li>
                 </sec:authorize>
             </ul>

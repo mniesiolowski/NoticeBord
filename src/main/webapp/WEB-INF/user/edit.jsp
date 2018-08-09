@@ -30,7 +30,7 @@
 <div class="col-lg-8">
 
     <!-- Title -->
-    <h1 class="mt-4">Registration</h1>
+    <h1 class="mt-4">Edit User</h1>
 
 </div>
 
@@ -49,6 +49,9 @@
     </form:form>
     <form>
     <input type="button" value="Cancle" onclick="window.location.href='/'"/>
+    </form>
+    <form>
+        <input type="button" value="Change Password" onclick="window.location.href='/edit-password'"/>
     </form>
     </div>
     </div>

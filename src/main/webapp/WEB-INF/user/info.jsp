@@ -29,7 +29,7 @@
     <div class="row">
 
         <div class="col-lg-3">
-            <h1 class="my-4">Shop Name</h1>
+            <h1 class="my-4">User Info</h1>
             <div class="list-group">
                <center> <p class="list-group-item">${user.firstName} ${user.lastName}1</p></center>
                 <p class="list-group-item">${user.username}</p>

@@ -30,23 +30,20 @@
         <div class="col-lg-8">
 
             <!-- Title -->
-            <h1 class="mt-4">Add Post</h1>
+            <h1 class="mt-4">Edit password</h1>
 
         </div>
 
         <div class="panel-body">
-            <form:form method="post" modelAttribute="post">
-                <label for="title" class="col-sm-3 control-label">Tytuł</label><br>
-                <form:input path="title" class="form-control"/>
-                <form:errors path="title" /><br><br>
-                <label for="descreption"class="col-sm-3 control-label">Opis</label><br>
-                <form:textarea path="descreption" class="form-control"/>
-                <form:errors path="descreption"/><br><br>
-                <b >Kategoria</b><br><form:errors path="category"/><br>
-                <form:checkboxes path="category" itemValue="id" itemLabel="name" items="${categories}"/><br><br>
-                <input type="submit" value="Save"  class="btn btn-primary">
-                <input type="button" value="Cancle" onclick="window.location.href='/'"  class="btn btn-primary"/>
+            <c:url var="post_url" value="/edit-password"/>
+            <form:form method="post" action="${post_url}" modelAttribute="user">
+                <label for="password">Password</label><br>
+                <form:input path="password"/><form:errors path="password"/><br><br>
+                <input type="submit" value="update">
             </form:form>
+            <form>
+                <input type="button" value="Cancle" onclick="window.location.href='/'"/>
+            </form>
         </div>
     </div>
 </div>

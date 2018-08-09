@@ -67,4 +67,29 @@ public class UserController {
 
             }
     }
+    @GetMapping("/edit-password")
+    public String editPassword(Model model, @AuthenticationPrincipal CurrentUser customUser) {
+        User entityUser = customUser.getUser();
+        model.addAttribute("user", entityUser);
+        return "user/password";
+    }
+
+    @PostMapping("/edit-password")
+    public String editPasswordModel(@ModelAttribute @Valid User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "user/password";
+        } else
+            try {
+
+                if (user.getRoles().stream().anyMatch(role -> role.getName().equals("ROLE_USER"))) {
+                    saveUser.updateUser(user);
+                    return "user/password";
+
+                } else
+                    saveUser.updateUser(user);
+                return "start1";
+            } catch (Exception e) {
+                return "admin/notfound";
+            }
+    }
 }
